@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<h1 class="text-center my-4">BACKOFFICE</h1>
+
+<p class="text-center">Bienvenue sur votre BackOffice</p>
+
+<a href="{{ path('app_admin_crud_chambres') }}" class="col-md-6 offset-md-3 btn btn-primary mb-2">GESTION DES CHAMBRES</a>
+<a href="#" class="col-md-6 offset-md-3 btn btn-primary mb-2">GESTION DES UTILISATEURS</a>
+<a href="{{ path('app_admin_crud_commandes') }}" class="col-md-6 offset-md-3 btn btn-primary mb-2">GESTION DES COMMANDES</a>
+
+{% endblock %}

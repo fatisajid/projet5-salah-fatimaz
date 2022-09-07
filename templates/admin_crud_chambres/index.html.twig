@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminCrudChambresController!{% endblock %}
+
+{% block body %}
+<h1 class="text-center">chambre: Admin</h1>
+{% for label, msgs in app.flashes %}
+		{% for msg in msgs %}
+			<div class="alert alert-{{ label }} text-center">
+				{{ msg }}
+			</div>
+
+		{% endfor %}
+	{% endfor %}
+
+	<a href="{{ path('admin_crud_chambres_new') }}" class="btn btn-success my-3">Ajouter un chambre</a>
+
+	<table class="table table-bordered text-center">
+		<thead>
+			<tr>
+				{% for data in colonnes %}
+					{% if data != "id" %}
+						<th>{{ data }}</th>
+					{% endif %}
+				{% endfor %}
+				<th>Editer / Supprimer</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for data in chmbr %}
+				<tr>
+					<td>{{ data.titre }}</td>
+					<td>{{ data.descriptionCourte }}</td>
+					<td>{{ data.descriptionLongue }}</td>
+					<td><img src="{{ data.photo }}" alt="Photo" style="width: 150px;"></td>
+					<td>{{ data.prixJournalier }}€</td>
+					<td>{{ data.dateEnregistrement|date('d/m/Y à H:i:s') }}</td>
+					<td>
+						<a href="{{ path('admin_crud_chambres_edit', {'id': data.id}) }}" class="text-dark">
+							<i class="fas fa-edit fa-lg"></i>
+						</a>
+
+						<a onclick="return confirm('Voulez-vous supprimer cette chambre ?')" href="{{ path('admin_crud_chambres_delete', {'id': data.id}) }}" class="text-dark">
+							<i class="fas fa-trash-alt fa-lg"></i>
+						</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+
+	</table>
+
+
+{% endblock %}

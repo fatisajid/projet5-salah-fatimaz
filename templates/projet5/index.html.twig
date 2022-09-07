@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Projet5Controller!{% endblock %}
+
+{% block body %}
+<div class="accueil ">
+<h2>BIENVENUE</h2>
+<h6 class="mb-5 red">Découvrez nos Chambre</h6>
+<div>
+<style>
+		.accueil{
+background-image: url('https://www.millevista.com/var/site/storage/images/_aliases/card_slide_image/0/1/9/0/70910-1-fre-FR/lheurebleuepalais4_57d138e25a7e1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 80%;
+  height: 500px;
+  text-align: center;
+
+		}
+		.card{
+			text-align: center;
+		}
+</style>
+
+
+<div class="accueil ">
+			<button class="btn btn-primary">HouseHotel | Découvrez nos chambres</button>
+
+		</div>
+
+
+					
+</div>
+</div>
+
+
+	<div class="row">
+		{% for item in chmbr %}
+			<div class="col-md-4">
+				<div class="card mb-3" style="width: 18rem;">
+					<h3 class="card-header">{{ item.titre }}</h3>jpg
+					<img src="{{ item.photo }}" class="img-fluid rounded-start" alt="...">
+					<div class="card-body">
+						<p class="card-text">{{ item.descriptionCourte }}</p>
+						<p class="card-text text-end fw-bold">{{ item.prixJournalier }}€/j</p>
+					</div>
+					<div class="card-body text-end">
+                    <a href="#" class="card-link btn btn-primary">Réserver</a>
+						<a href="{{ path('reservation_chambre', {id: item.id}) }}" class="card-link btn btn-primary">Réserver</a>
+                        
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+
+
+
+
+{% endblock %}
