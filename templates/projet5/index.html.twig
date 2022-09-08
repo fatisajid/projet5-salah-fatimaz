@@ -6,10 +6,10 @@
 <div class="accueil ">
 <h2>BIENVENUE</h2>
 <h6 class="mb-5 red">Découvrez nos Chambre</h6>
-<div>
+
 <style>
 		.accueil{
-background-image: url('https://www.millevista.com/var/site/storage/images/_aliases/card_slide_image/0/1/9/0/70910-1-fre-FR/lheurebleuepalais4_57d138e25a7e1.jpg');
+background-image: url('https://th.bing.com/th/id/OIP.NRydoEFLY9kigHB78iRIsgHaEK?pid=ImgDet&rs=1');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 80%;
@@ -22,30 +22,22 @@ background-image: url('https://www.millevista.com/var/site/storage/images/_alias
 		}
 </style>
 
-
-<div class="accueil ">
-			<button class="btn btn-primary">HouseHotel | Découvrez nos chambres</button>
+			<button class="btn btn-primary" style="margin-top: 250px">HouseHotel | Découvrez nos chambres</button>
 
 		</div>
-
-
-					
-</div>
-</div>
-
 
 	<div class="row">
 		{% for item in chmbr %}
 			<div class="col-md-4">
-				<div class="card mb-3" style="width: 18rem;">
-					<h3 class="card-header">{{ item.titre }}</h3>jpg
+				<div class="card mb-3" style="width: 18rem;"> 
+					<h3 class="card-header">{{ item.titre }}</h3>
 					<img src="{{ item.photo }}" class="img-fluid rounded-start" alt="...">
 					<div class="card-body">
 						<p class="card-text">{{ item.descriptionCourte }}</p>
 						<p class="card-text text-end fw-bold">{{ item.prixJournalier }}€/j</p>
 					</div>
 					<div class="card-body text-end">
-                    <a href="#" class="card-link btn btn-primary">Réserver</a>
+                    {# <a href="#" class="card-link btn btn-primary">Réserver</a> #}
 						<a href="{{ path('reservation_chambre', {id: item.id}) }}" class="card-link btn btn-primary">Réserver</a>
                         
 					</div>

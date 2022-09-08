@@ -37,6 +37,9 @@ class Chambre
     #[ORM\OneToMany(mappedBy: 'chambre', targetEntity: Commande::class, orphanRemoval: true)]
     private Collection $commandes;
 
+    // #[ORM\Column]
+    // private ?int $prix_total = null;
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
@@ -148,4 +151,16 @@ class Chambre
 
         return $this;
     }
-}
+
+    // public function getPrixTotal(): ?int
+    // {
+    //     return $this->prix_total;
+    // }
+
+    // public function setPrixTotal(int $prix_total): self
+    // {
+    //     $this->prix_total = $prix_total;
+
+    //     return $this;
+    // }
+ }

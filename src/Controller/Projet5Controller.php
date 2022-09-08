@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Chambre;
 use App\Entity\Commande;
+use App\Form\CommandeType;
 use App\Repository\ChambreRepository;
 use App\Repository\CommandeRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -40,9 +41,15 @@ class Projet5Controller extends AbstractController
         $form->handleRequest($rq);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $commande->setChambre($this->getUser());
+            $user = $this->getUser();
+            $commande->setUser($user);
             $commande->setDateEnregistrement(new \DateTime());
             $commande->setChambre($chambre);
+            $commande->setPrenom($user->getPrenom());
+            $commande->setNom($user->getNom());
+            $commande->setEmail($user->getEmail());
+            
+
 
             $depart = $commande->getDateDepart();
             if ($depart->diff($commande->getDateArrivee())->invert == 1) {
@@ -52,8 +59,9 @@ class Projet5Controller extends AbstractController
                 ]);
             }
             $jours = $depart->diff($commande->getDateArrivee())->days;
-            // $prixTotal = ($commande->getChambre()->getPrixJournalier() * $jours) + $commande->getChambre()->getPrixJournalier();
-            // $commande->setPrixTotal($prixTotal);
+            $prixTotal = ($commande->getChambre()->getPrixJournalier() * $jours) + $commande->getChambre()->getPrixJournalier();
+            $commande->setPrixTotal($prixTotal);
+            $commande->setPrixTotal($prixTotal);
 
             $manager->persist($commande);
             $manager->flush();
@@ -70,7 +78,7 @@ class Projet5Controller extends AbstractController
     #[Route('/projet5/profil', name: 'profil')]
     public function profil(CommandeRepository $repo)
     {
-        $commandes = $repo->findBy(['chambre' => $this->getUser()]);
+        $commandes = $repo->findBy(['user' => $this->getUser()]);
 
         return $this->render("projet5/profil.html.twig", [
             'commandes' => $commandes

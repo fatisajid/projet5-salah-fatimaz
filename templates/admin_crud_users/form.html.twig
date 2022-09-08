@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Admin | Formulaire User
+{% endblock %}
+
+{% block body %}
+
+{% for label, msgs in app.flashes %}
+		{% for msg in msgs %}
+			<div class="alert alert-{{ label }} text-center">
+				{{ msg }}
+			</div>
+
+		{% endfor %}
+	{% endfor %}
+
+	<h1 class="display-4 text-center my-4">
+
+		{% if editMode %}
+			BACKOFFICE | Edition d'utilisateur
+		{% else %}
+			BACKOFFICE | Création d'un utilisateur
+		{% endif %}
+
+	</h1>
+
+	{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+	{# {{ form_row(form.pseudo, {
+        label: 'Pseudo'
+    }) }}
+	{{ form_row(form.email) }}
+	{{ form_row(form.plainPassword ) }}
+	{{ form_row(form.civilite) }}
+	{{ form_row(form.nom) }}
+	{{ form_row(form.prenom) }}
+	{{ form_row(form.roles) }} #}
+
+	<button class="btn btn-primary my-2" type="submit">
+
+		{% if editMode %}
+			Enregistrer les modifications
+		{% else %}
+			Ajouter un utilisateur
+		{% endif %}
+
+	</button>
+
+	{{ form_end(form) }}
+
+
+{% endblock %}

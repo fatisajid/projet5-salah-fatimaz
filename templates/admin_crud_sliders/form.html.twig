@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Admin | Formulaire des sliders
+{% endblock %}
+
+{% block body %}
+
+{% for label, msgs in app.flashes %}
+		{% for msg in msgs %}
+			<div class="alert alert-{{ label }} text-center">
+				{{ msg }}
+			</div>
+
+		{% endfor %}
+	{% endfor %}
+
+	<h1 class="display-4 text-center my-4">
+
+		{% if editMode %}
+			BACKOFFICE | Edition un slider
+		{% else %}
+			BACKOFFICE | Ajouter un slider
+		{% endif %}
+
+	</h1>
+
+	{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+	
+	{# {{ form_row(form.photo) }} #}
+    {# {{ form_row(form.order) }} #}
+	{# {{ form_row(form.dateEnregistrement) }} #}
+
+	<button class="btn btn-primary my-2" type="submit">
+
+		{% if editMode %}
+			Enregistrer les modifications
+		{% else %}
+			ajout
+		{% endif %}
+
+	</button>
+
+	{{ form_end(form) }}
+
+
+{% endblock %}

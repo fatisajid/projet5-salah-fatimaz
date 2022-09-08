@@ -26,7 +26,7 @@
         <th>telephone</th>
         <th>email</th>
         <th>date d'enregistrement</th>
-        <th>action</th>
+        {# <th>action</th> #}
 
 
 
@@ -37,17 +37,17 @@
     <tr>
         
         <td>{{ item.dateEnregistrement|date('d/m/Y à H:i:s') }}</</td>
-        <td>{{ item.chambre.titre }}</</td>
+        <td>{{ item.chambre.titre }}</td>
 
         
-        <td>{{ item.chambre.titre }}</</td>
+        <td>{{ item.chambre.titre }}</td>
         <td>{{ item.dateArrivee|date('d/m/Y à H:i:s') }}</</td>
         <td>{{ item.dateDepart|date('d/m/Y à H:i:s') }}</td>
-        <td>{{ item.prixTotal }}€</</td>
-        <td>{{ item.user.prenom }}</</td>
-        <td>{{ item.user.nom }}</</td>
-        <td>{{ item.user.telephone }}</</td>
-        <td>{{ item.user.email }}</</td>
+        {# <td>{{ item.prixTotal }}€</td> #}
+        <td>{{ item.user.prenom }}</td>
+        <td>{{ item.user.nom }}</td>
+        {# <td>{{ item.user.telephone }}</</td> #}
+        <td>{{ item.user.email }}</td>
         <td>{{ item.dateEnregistrement|date('d/m/Y à H:i:s') }}</</td>   
         
 

@@ -1,0 +1,3 @@
+INSERT INTO `commande` (`id`, `chambre_id`, `date_arrivee`, `date_depart`, `prix_total`, `prenom`, `nom`, `telephone`, `email`, `date_enregistrement`, `user_id`) VALUES
+(13, 4, '2022-09-17', '2022-09-10', 8000, 'fatima', 'salah', '0600201458', 'fatimaezahraa.salah@gmail.com', '2022-09-08', 7),
+(14, 2, '2022-09-15', '2022-09-10', 3600, 'fatima', 'salah', '0610000000', 'fatimaezahraa.salah@gmail.com', '2022-09-08', 7);

@@ -22,6 +22,7 @@ class CommandeType extends AbstractType
         ->add('dateArrivee', DateTimeType::class, [
             'widget' => 'single_text'
         ])
+        ->add('telephone')
         ;
     }
 

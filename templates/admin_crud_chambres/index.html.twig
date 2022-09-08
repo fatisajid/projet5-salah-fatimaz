@@ -19,7 +19,7 @@
 		<thead>
 			<tr>
 				{% for data in colonnes %}
-					{% if data != "id" %}
+					{% if data != "id" and data != "prix_total" %}
 						<th>{{ data }}</th>
 					{% endif %}
 				{% endfor %}
@@ -34,7 +34,10 @@
 					<td>{{ data.descriptionLongue }}</td>
 					<td><img src="{{ data.photo }}" alt="Photo" style="width: 150px;"></td>
 					<td>{{ data.prixJournalier }}€</td>
+					
+
 					<td>{{ data.dateEnregistrement|date('d/m/Y à H:i:s') }}</td>
+					{# <td>{{ data.prixTotal }}€</td> #}
 					<td>
 						<a href="{{ path('admin_crud_chambres_edit', {'id': data.id}) }}" class="text-dark">
 							<i class="fas fa-edit fa-lg"></i>
