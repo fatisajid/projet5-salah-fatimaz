@@ -1,0 +1,89 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Accueil{% endblock %}
+
+
+{% block body %}
+    <style>
+        .accueil {
+            background-image: url('https://th.bing.com/th/id/R.f943f4168afe7f0ae009c2e8e8abed73?rik=psA8LKTVD3%2bYaw&riu=http%3a%2f%2fhotelkitchen.org%2fwp-content%2fuploads%2f2016%2f06%2fThinkstockPhotos-824284124_75.jpg&ehk=lg7DW1TmfnskT5gaNp8dWebBIUZOqCfPc0ZJ3rxKWpA%3d&risl=&pid=ImgRaw&');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 90% 100%;
+            height: 500px;
+            text-align: center;
+        }
+
+        .contenaire {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-top: 450px;
+
+        }
+        .carousel {
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            text-align: center;
+        }
+
+        .img-fluid {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+
+        }
+    </style>
+<div class="accueil ">
+
+        <h2>BIENVENUE</h2>
+        <h6 class="mb-5 red">Découvrez norte restaurant</h6>
+        <div class="contenaire">
+            <div class="cercle text-center">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://th.bing.com/th/id/R.1eed0064af4bcbaa976d4b50b5e8874b?rik=%2fDol7KljEjV5QA&riu=http%3a%2f%2fwww.bemextours.com%2fwp-content%2fuploads%2f2016%2f06%2fcroatie-split-hotel-meridien-lav-restaurant.jpg&ehk=2pyg9Dc6jTdVhvu%2fKshFVUo9iu32PBGPQ7O7uJpat7Y%3d&risl=&pid=ImgRaw&r=0" class="img-fluid" alt="...">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="https://th.bing.com/th/id/R.a3ff4908bc317490871f0049a274e883?rik=YL9104G5wk0Few&riu=http%3a%2f%2fwww.weightloss.com.au%2fimages%2fhealthy-recipes%2fdinner%2fseed-must-lamb-lge.jpg&ehk=Z58Dsl17GuFQ1cB5IwJRxSHkYhIp0qpIDYcOTrMtziM%3d&risl=&pid=ImgRaw&r=0" class="img-fluid" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://assets.afcdn.com/manage/bloc/D20161202/carre-blanquette-120608_L.jpg" class="img-fluid" alt="...">
+                             </div>
+                        <div class="carousel-item">
+                            <img src="https://assets.afcdn.com/manage/bloc/D20161202/carre-blanquette-120608_L.jpg" class="img-fluid" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="card-body ">
+                    <h5 class="card-text ">Carte</h5>
+                    <p class="card-text">Venez découvrez notre restaurant</p>
+                    <a href="/pdf/carte.pdf" class="btn btn btn-primary mb-2">Voire la carte</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

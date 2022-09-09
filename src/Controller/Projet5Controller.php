@@ -15,12 +15,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class Projet5Controller extends AbstractController
 {
-     #[Route('/', name: 'root')]
-
-    public function root()
+     
+    #[Route('/projet5/home', name: 'home')]
+    public function home(ChambreRepository $repo)
     {
-        return $this->redirectToRoute('app_projet5');
+        $chambres = $repo->findAll();
+        return $this->render("projet5/home.html.twig", [
+            'Chambres' => $chambres
+        ]);
     }
+
+    // #[Route('/projet5/show', name: 'show')]
+    // public function home(ChambreRepository $repo)
+    // {
+    //     $chambres = $repo->findAll();
+    //     return $this->render("projet5/home.html.twig", [
+    //         'Chambres' => $chambres
+    //     ]);
+    // }
     
 
     #[Route('/projet5', name: 'app_projet5')]
@@ -84,9 +96,6 @@ class Projet5Controller extends AbstractController
             'commandes' => $commandes
         ]);
     }
-
-  
-
 
 
 
