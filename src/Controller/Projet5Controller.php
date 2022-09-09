@@ -17,6 +17,7 @@ class Projet5Controller extends AbstractController
 {
      
     #[Route('/projet5/home', name: 'home')]
+    #[Route('/', name: 'home1')]
     public function home(ChambreRepository $repo)
     {
         $chambres = $repo->findAll();
