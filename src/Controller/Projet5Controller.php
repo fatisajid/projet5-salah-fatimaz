@@ -25,14 +25,14 @@ class Projet5Controller extends AbstractController
         ]);
     }
 
-    // #[Route('/projet5/show', name: 'show')]
-    // public function home(ChambreRepository $repo)
-    // {
-    //     $chambres = $repo->findAll();
-    //     return $this->render("projet5/home.html.twig", [
-    //         'Chambres' => $chambres
-    //     ]);
-    // }
+    #[Route('/projet5/show', name: 'show')]
+    public function show(ChambreRepository $repo)
+    {
+        $chambres = $repo->findAll();
+        return $this->render("projet5/show.html.twig", [
+            'Chambres' => $chambres
+        ]);
+    }
     
 
     #[Route('/projet5', name: 'app_projet5')]
